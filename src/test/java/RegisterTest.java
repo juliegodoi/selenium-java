@@ -54,10 +54,7 @@ public class RegisterTest {
         }
     }
 
-    /**
-     * Cria o email duplicado que será usado no teste de email duplicado
-     * É executado antes dos testes para garantir que o email já existe
-     */
+    // Cria o email duplicado que será usado no teste de email duplicado
     private static void generateDuplicatedEmail() {
         try {
             // Navega para a página de login
@@ -89,10 +86,7 @@ public class RegisterTest {
         }
     }
 
-    /**
-     * Gera um email único usando UUID para evitar conflitos nos testes
-     * @return String com email único no formato joao[uuid]@email.com
-     */
+     // Gera um email único usando UUID para evitar conflitos nos testes
     private String generateUniqueEmail() {
         // Gera um UUID e pega os primeiros 8 caracteres
         String uuid = UUID.randomUUID().toString().substring(0, 8);
@@ -140,7 +134,7 @@ public class RegisterTest {
 
     @Test
     @Order(2)
-    @DisplayName("Cadastro com email duplicado")
+    @DisplayName("Cadastro sem sucesso - email duplicado")
     public void testDuplicateEmailRegistration() {
         // Define o tamanho da janela do navegador
         driver.manage().window().setSize(new Dimension(1366, 720));
